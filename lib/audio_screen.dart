@@ -34,9 +34,9 @@ class _AudioScreenState extends State<AudioScreen> with WidgetsBindingObserver {
     _player.playbackEventStream.listen((event) {},
         onError: (e, stk) => print('A stream error occured: $e'));
     try {
-      await _player.setAsset('assets/audio/test_audio.mp3');
-      // await _player.setAudioSource(
-      //     AudioSource.uri(Uri.file("assets/audio/test_audio.mp3")));
+      // await _player.setAsset('assets/audio/test_audio.mp3');
+      await _player.setAudioSource(
+          AudioSource.uri(Uri.parse('asset:///assets/audio/test_audio.mp3')));
     } catch (e) {
       print("Error loading audio source: $e");
     }
